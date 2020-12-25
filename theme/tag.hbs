@@ -1,0 +1,11 @@
+{{!< default}}
+
+{{#tag}}
+    <div class="tag-title">{{name}}s</div>
+{{/tag}}
+
+<div id="posts">
+    {{#foreach posts}}
+        {{> "post-card"}}
+    {{/foreach}}
+</div>

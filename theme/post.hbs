@@ -1,0 +1,18 @@
+{{!< default}} {{#post}} <div id="posts" style="padding-top:25px;padding-bottom:25px;min-height:calc(100vh - 179px)">
+    <div class="post-date">{{date format="D MMM YYYY"}}</div>
+    <span class="post-title">{{title}}</span>
+    <div class="post-showcase" style="background-image: url({{feature_image}})"></div>
+    <div class="post-text">
+        {{content}}
+        <hr>
+        <!--minified to prevent indentation from screwing things up-->
+        <div>
+
+        </div><span>Escrito por </span>
+        {{#foreach authors}}
+            <a href="{{url}}">{{name}}</a>
+        {{/foreach}}
+    </div>
+    </div>
+    </div>
+    {{/post}}

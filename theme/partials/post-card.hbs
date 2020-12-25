@@ -1,0 +1,11 @@
+<div class="post-preview">
+    {{!--{{#if feature_image}} use if you want to prevent the post img from having no background--}}
+    <div class="post-preview-image" style="background-image: url({{feature_image}})"></div>
+    <div class="post-preview-wrapper"> 
+        <span class="post-preview-date">{{date format="D MMM YYYY"}}</span>
+        <br>
+        <a class="post-card-url" href="{{url}}"><span class="post-preview-title">{{title}}</span></a>
+        <br>
+        <span class="post-preview-text">{{excerpt words="50"}}{{!--... (removed ... because I can't show it based on the number of words of the post, this is, I can't get the number of words)--}}</span>
+    </div>
+</div>

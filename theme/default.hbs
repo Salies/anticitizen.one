@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="HandheldFriendly" content="True" />
+    <link rel="stylesheet" href="{{asset "css/style.css"}}">
+    <link rel="stylesheet" href="{{asset "built/normalize.min.css"}}">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:200,400|Open+Sans:300,400,700" rel="stylesheet">
+    <title>{{meta_title}}</title>
+    {{ghost_head}}
+</head>
+<body>
+    <div class="noturnall" onclick="noturnall()"></div>
+    <header>
+        <a href="/">
+            {{#if @site.logo}}
+                <img src="{{@site.logo}}" class="logo"/>
+            {{/if}}
+
+            <div class="title">{{@site.title}}</div>
+        </a>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav">
+            <a href="/"><section>Home</section></a>
+            <a href="/tag/critica"><section>Críticas</section></a>
+            <a href="/tag/artigo"><section>Artigos</section></a>
+            <a href="/tag/prog-jam"><section>Prog Jams</section></a>
+            <a href="https://saliesbox.com"><section>Contato</section></a>
+        </div>
+    </header>
+
+    <div id="main">
+        {{{body}}}
+    </div>
+    
+    <footer>
+        Copyright {{@site.title}} © <span class="year"></span>
+        {{!--copyright message--}}
+        <br>
+        Criado e mantido por <a href="https://saliesbox.com">Daniel Serezane</a> via Ghost.
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR" target="_blank"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png" class="c-commons"></a>
+    </footer>
+
+    {{{block "scripts"}}}
+
+    <script>
+        var dark = false;
+        function noturnall() {
+            if (dark === false) {
+                document.querySelector("html").setAttribute('style', '--body_bg:#23272A; --main_bg:#2C2F33; --title-color:rgba(255,255,255,0.95); --date-color:rgba(255,255,255,0.5); --text-color:rgba(255,255,255,0.7);');
+                document.querySelector(".noturnall").style.setProperty("background-position-x", 'right');
+                dark = true;
+            }
+            else {
+                document.querySelector("html").setAttribute('style', '--body_bg:#ededed; --main_bg:#fafafa; --title-color:#222; --date-color:rgba(0,0,0,0.3); --text-color:#3A4145;');
+                document.querySelector(".noturnall").style.setProperty("background-position-x", 'left');
+                dark = false;
+            }
+        }
+
+        document.querySelector('.hamburger').addEventListener('click', function(){
+            document.querySelector('.nav').classList.toggle("display");
+        });
+
+        document.querySelector('.year').innerHTML = new Date().getFullYear();
+    </script>
+
+    {{ghost_foot}}
+</body>
+</html>

@@ -1,0 +1,42 @@
+{{!< default}} 
+
+{{!--Ghost's featured system is pretty useless for the way I do featured, so I decided to use my own thing (based on "big-featured" and "featured" tags. Since my theme doesn't explicitly display tags, this is not a problem.--}}
+
+    <style>
+        @media screen and (max-width: 950px) {
+            .noturnall{
+                left:10px!important;
+            }
+        }
+    </style>
+
+    <div id="destak">
+        {{#get "posts" filter="tags:big-featured" limit="1"}}
+            {{#foreach posts}}
+                <a href="{{url}}"><div class="big-c" style="background-image: url({{feature_image}})">
+                    <div class="destak-title">
+                        <span>{{date format="D MMM YYYY"}}</span>
+                        <br>
+                        <span>{{title}}</span>
+                    </div>
+                </div></a>
+            {{/foreach}}
+        {{/get}}
+        {{#get "posts" filter="tags:featured" limit="2"}}
+            {{#foreach posts}}
+            <a href="{{url}}"><div class="small-c" style="background-image: url({{feature_image}})">
+                <div class="destak-title">
+                    <span>{{date format="D MMM YYYY"}}</span>
+                    <br>
+                    <span>{{title}}</span>
+                </div>
+            </div></a>
+            {{/foreach}}
+        {{/get}}
+    </div>
+    <div id="posts" style="/*min-height: calc(100vh - 507px)*/"> <!--479px if no pagination-->
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </div>
+    {{pagination}}

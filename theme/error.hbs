@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="HandheldFriendly" content="True" />
+    <title>{{meta_title}}</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,900" rel="stylesheet">
+    <style>
+        body{
+            background:#1a1a1a;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .wrapper{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            text-align:center;
+        }
+
+        .wrapper span:nth-of-type(1){
+            color:#fff;
+            font-size:3em;
+            font-weight:900;
+        }
+
+        .wrapper span:nth-of-type(2){
+            color:rgba(255,255,255,0.75);
+            color-weight:500;
+        }
+    </style>
+    {{ghost_head}}
+</head>
+<body>
+    <div class="wrapper">
+        <a href="{{@site.url}}"><img src="{{@site.logo}}"/></a><br>
+        <span>Error {{statusCode}}</span><br>
+        <span>{{message}}<br/>Time out for a second. That wasn't supposed to happen.</span>
+    </div>
+</body>
+</html>

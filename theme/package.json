@@ -1,0 +1,20 @@
+{
+    "name": "anticitizen-ghost-theme",
+    "description": "anticitize.one theme.",
+    "demo": "https://anticitizen.one",
+    "author":{ 
+        "name" : "Salies", 
+        "email" : "serezane@protonmail.com",
+        "url" : "https://saliesbox.com"
+    },
+    "version": "1.0.0",
+    "engines": {
+        "ghost-api": "v3",
+        "ghost": ">=3.0.0"
+    },
+    "license": "MIT",
+    "config": {
+        "posts_per_page": 15
+    },
+    "keywords": ["ghost-theme"]
+}
