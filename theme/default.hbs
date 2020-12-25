@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="HandheldFriendly" content="True" />
-    <link rel="stylesheet" href="{{asset "css/style.css"}}">
+    <link rel="stylesheet" href="{{asset "built/style.min.css"}}">
     <link rel="stylesheet" href="{{asset "built/normalize.min.css"}}">
+    <link rel="stylesheet" href="{{asset "built/highlight.min.css"}}">
+    <script src="{{asset "built/highlight.min.js"}}"></script>
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:200,400|Open+Sans:300,400,700" rel="stylesheet">
     <title>{{meta_title}}</title>
     {{ghost_head}}
 </head>
 <body>
-    <div class="noturnall" onclick="noturnall()"></div>
     <header>
         <a href="/">
             {{#if @site.logo}}
@@ -51,27 +52,7 @@
 
     {{{block "scripts"}}}
 
-    <script>
-        var dark = false;
-        function noturnall() {
-            if (dark === false) {
-                document.querySelector("html").setAttribute('style', '--body_bg:#23272A; --main_bg:#2C2F33; --title-color:rgba(255,255,255,0.95); --date-color:rgba(255,255,255,0.5); --text-color:rgba(255,255,255,0.7);');
-                document.querySelector(".noturnall").style.setProperty("background-position-x", 'right');
-                dark = true;
-            }
-            else {
-                document.querySelector("html").setAttribute('style', '--body_bg:#ededed; --main_bg:#fafafa; --title-color:#222; --date-color:rgba(0,0,0,0.3); --text-color:#3A4145;');
-                document.querySelector(".noturnall").style.setProperty("background-position-x", 'left');
-                dark = false;
-            }
-        }
-
-        document.querySelector('.hamburger').addEventListener('click', function(){
-            document.querySelector('.nav').classList.toggle("display");
-        });
-
-        document.querySelector('.year').innerHTML = new Date().getFullYear();
-    </script>
+    <script src="{{asset "built/index.min.js"}}"></script>
 
     {{ghost_foot}}
 </body>

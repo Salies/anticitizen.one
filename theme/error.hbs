@@ -7,31 +7,7 @@
     <meta name="HandheldFriendly" content="True" />
     <title>{{meta_title}}</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:500,900" rel="stylesheet">
-    <style>
-        body{
-            background:#1a1a1a;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .wrapper{
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-50%, -50%);
-            text-align:center;
-        }
-
-        .wrapper span:nth-of-type(1){
-            color:#fff;
-            font-size:3em;
-            font-weight:900;
-        }
-
-        .wrapper span:nth-of-type(2){
-            color:rgba(255,255,255,0.75);
-            color-weight:500;
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset "built/basic.min.css"}}">
     {{ghost_head}}
 </head>
 <body>

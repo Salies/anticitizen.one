@@ -2,10 +2,10 @@
     "name": "anticitizen-ghost-theme",
     "description": "anticitize.one theme.",
     "demo": "https://anticitizen.one",
-    "author":{ 
-        "name" : "Salies", 
-        "email" : "serezane@protonmail.com",
-        "url" : "https://saliesbox.com"
+    "author": {
+        "name": "Salies",
+        "email": "serezane@protonmail.com",
+        "url": "https://saliesbox.com"
     },
     "version": "1.0.0",
     "engines": {
@@ -16,5 +16,13 @@
     "config": {
         "posts_per_page": 15
     },
-    "keywords": ["ghost-theme"]
+    "keywords": [
+        "ghost-theme"
+    ],
+    "devDependencies": {
+        "cssnano": "^4.1.10",
+        "postcss": "^8.2.1",
+        "postcss-cli": "^8.3.1"
+    },
+    "dependencies": {}
 }

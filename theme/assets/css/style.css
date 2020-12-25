@@ -157,13 +157,13 @@ footer a {
 
 .destak-title span:first-of-type {
     color: rgba(255, 255, 255, 0.5);
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.75);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
 }
 
 .destak-title span:last-of-type {
     color: #fff;
     font-size: 29px;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.75);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
 }
 
 #posts {
@@ -217,19 +217,6 @@ footer a {
 .post-preview-text {
     font-size: 0.85rem;
     color: var(--text-color);
-}
-
-.noturnall {
-    width: 25px;
-    height: 25px;
-    background: url('../img/lights.png');
-    background-position-x: left;
-    bottom: 10px;
-    right: 10px;
-    position: absolute;
-    border-radius: 50%;
-    cursor: pointer;
-    /*transition:.2s;*/
 }
 
 .post-date {
@@ -315,21 +302,19 @@ footer a {
 .author {
     position: relative;
     width: calc(100% - 40px);
-    height: auto;
+    height:150px;
     z-index: 3;
     padding: 20px;
     color: #fff;
     background-size: cover;
-    overflow: auto;
 }
 
-.author:after {
-    content: ' ';
+.author-background-dummy{
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    top:0;
+    left:0;
+    width:100%;
+    height:190px;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: -1;
 }
@@ -345,16 +330,14 @@ footer a {
 }
 
 .author span:nth-of-type(2) {
+    position: absolute;
     display: block;
-    max-width: calc(100% - 90px);
+    right: 50px;
+    width: calc(100% - 160px);
     text-align: justify;
 }
 
-.author span:nth-of-type(3) {
-    padding-left: 90px;
-}
-
-.author span:nth-of-type(3) a {
+.author span:nth-of-type(2) a {
     color: #fff;
     text-decoration: none;
 }
@@ -476,7 +459,6 @@ footer a {
     display: flex;
     min-height: 148px;
     color: var(--text-color);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-decoration: none;
     border-radius: 3px;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);

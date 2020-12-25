@@ -1,42 +1,41 @@
-{{!< default}}
-
-{{#author}}
-<div class="author" {{#if cover_image}}style="background-image: url({{cover_image}})"{{/if}}>
+{{!< default}} {{#author}} <div class="author" {{#if cover_image}}style="background-image: url({{cover_image}})"
+    {{/if}}>
+    <div class="author-background-dummy"></div>
     {{#if profile_image}}
-        <img src="{{profile_image}}"/>
-        {{else}}
-        <div style="width:75px;height:75px;background:#fff;float: left;margin-right: 15px;"></div>
+    <img src="{{profile_image}}" />
+    {{else}}
+    <div style="width:75px;height:75px;background:#fff;float: left;margin-right: 15px;"></div>
     {{/if}}
 
     <span>{{name}}</span>
     <br>
-    <span>{{bio}}</span><br>
-    <span>
+    <span>{{bio}}
+        <br><br>
         {{#if website}}
-            <a href="{{website}}">Website</a>
+        <a href="{{website}}">Website</a>
         {{/if}}
         {{#if twitter}}
-            {{#if website}}
-                &bull; <a href="{{twitter_url}}">Twitter</a>
-            {{else}}
-                <a href="{{twitter_url}}">Twitter</a>
-            {{/if}}
+        {{#if website}}
+        &bull; <a href="{{twitter_url}}">Twitter</a>
+        {{else}}
+        <a href="{{twitter_url}}">Twitter</a>
+        {{/if}}
         {{/if}}
         {{#if facebook}}
-            {{#if website}}
-                &bull; <a href="{{facebook_url}}">Facebook</a>
-            {{else if twitter}}
-                &bull; <a href="{{facebook_url}}">Facebook</a>
-            {{else}}
-                <a href="{{facebook_url}}">Facebook</a>
-            {{/if}}
+        {{#if website}}
+        &bull; <a href="{{facebook_url}}">Facebook</a>
+        {{else if twitter}}
+        &bull; <a href="{{facebook_url}}">Facebook</a>
+        {{else}}
+        <a href="{{facebook_url}}">Facebook</a>
+        {{/if}}
         {{/if}}
     </span>
-</div>
-{{/author}}
+    </div>
+    {{/author}}
 
-<div id="posts" style="/*min-height: calc(100vh - 377px)*/">
-    {{#foreach posts}}
+    <div id="posts">
+        {{#foreach posts}}
         {{> "post-card"}}
-    {{/foreach}}
-</div>
+        {{/foreach}}
+    </div>
